@@ -2,20 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=Epilogue&display=swap");
+
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 38, 83, 176;
-  --background-end-rgb: 38, 83, 176;
+  --font--Epilogue: "Epilogue", sans-serif;
+  background-color: #2653b0;
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 38, 83, 176;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 38, 83, 176;
-  }
-}
-
+/*
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -24,8 +17,10 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+} */
+body {
+  font-family: var(--font--Epilogue);
 }
-
 @layer utilities {
   .text-balance {
     text-wrap: balance;
