@@ -61,7 +61,7 @@ const SignUp = () => {
   }
 
   if (user) {
-    return router.push("/"); // Redirect to the homepage (index file)
+    return router.push("/home"); // Redirect to the homepage (index file)
   }
 
   return (
