@@ -31,6 +31,7 @@ const config: Config = {
       "blue-main": "#1A298Ef6",
       "blue-bg": "#2653B0",
       "blue-light": "#98B5E8",
+      "yellow-main": "#F7CE45",
     },
     fontFamily: {
       sans: ["var(--font--Epilogue)", ...defaultTheme.fontFamily.sans],

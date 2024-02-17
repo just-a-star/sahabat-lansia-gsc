@@ -29,7 +29,7 @@ const SignUp = () => {
   const handleSignUpWithEmail = async () => {
     try {
       await createUserWithEmailAndPassword(auth, email, password);
-      router.push("/home");
+      router.push("/welcome");
     } catch (error) {
       console.error(error);
       // Handle errors here, such as displaying a notification
@@ -41,7 +41,7 @@ const SignUp = () => {
     try {
       await signInWithPopup(auth, provider);
       // handle success direct to home page
-      router.push("/home");
+      router.push("/welcome");
     } catch (error) {
       console.error(error);
       // Handle errors
@@ -61,7 +61,7 @@ const SignUp = () => {
   }
 
   if (user) {
-    return router.push("/home"); // Redirect to the homepage (index file)
+    return router.push("/welcome"); // Redirect to the homepage (index file)
   }
 
   return (
