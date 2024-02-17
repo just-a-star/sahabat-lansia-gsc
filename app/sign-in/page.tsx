@@ -26,7 +26,7 @@ const SignIn = () => {
   const handleSignInWithEmail = async () => {
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      router.push("/home"); // Redirect to home page upon successful sign-in
+      router.push("/welcome"); // Redirect to home page upon successful sign-in
     } catch (error) {
       console.error(error);
       // Handle errors here, such as displaying a notification
@@ -37,7 +37,7 @@ const SignIn = () => {
     const provider = new GoogleAuthProvider();
     try {
       await signInWithPopup(auth, provider);
-      router.push("/home"); // Redirect to home page upon successful sign-in
+      router.push("/welcome"); // Redirect to home page upon successful sign-in
     } catch (error) {
       console.error(error);
       // Handle errors
