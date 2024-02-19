@@ -11,21 +11,23 @@ import { signOut } from "firebase/auth";
 import { FaAngleRight } from "react-icons/fa6";
 import { Card, CardBody, User } from "@nextui-org/react";
 import GrafikJantung from "../components/GrafikJantung";
+import NavBar2 from "../components/NavBar2"; // Fix the import statement to use the correct casing
+
+// import Navbar from "../components/Navbar2";
 export default function HomePage() {
-  const router = useRouter(); // Use the useRouter hook
   const [user, loading, error] = useAuthState(auth);
 
-  const handleLogout = async () => {
+  const handleLogout = async (callback) => {
     try {
       await signOut(auth);
-      router.push("/"); // Redirect to the homepage (index file)
+      if (callback) callback();
     } catch (error) {
       console.error("Logout error:", error);
-      // Handle errors here, such as showing an error message
     }
   };
+
   if (loading) {
-    return <div>Loading...</div>; // Or any loading component
+    return <div>Loading...</div>;
   }
 
   if (error) {
@@ -33,7 +35,7 @@ export default function HomePage() {
   }
 
   if (!user) {
-    return <div>Please sign in.</div>; // Or redirect to sign-in page
+    return <div>Please sign in.</div>;
   }
 
   return (
@@ -74,6 +76,9 @@ export default function HomePage() {
           </div>
         </section>
       </div>
+      <nav>
+        <NavBar2 onLogout={handleLogout} />
+      </nav>
     </div>
   );
 }

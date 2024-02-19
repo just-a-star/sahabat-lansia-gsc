@@ -65,7 +65,7 @@ const SignUp = () => {
   }
 
   return (
-    <div className="bg-white flex flex-col items-center justify-center h-screen p-6">
+    <div className="h-100vh bg-white flex flex-col items-center justify-center h-screen p-6">
       <h1 className="text-center text-blue-main font-semibold text-3xl p-3">
         Buat Akun
       </h1>
@@ -83,7 +83,9 @@ const SignUp = () => {
         size="lg"
         placeholder="Nama"
         value={name}
-        onChange={(e) => setName(e.target.value)}
+        onChange={(e: { target: { value: React.SetStateAction<string> } }) =>
+          setName(e.target.value)
+        }
       />
       <Spacer y={1} />
       <Input
@@ -93,7 +95,9 @@ const SignUp = () => {
         size="lg"
         placeholder="E-mail"
         value={email}
-        onChange={(e) => setEmail(e.target.value)}
+        onChange={(e: { target: { value: React.SetStateAction<string> } }) =>
+          setEmail(e.target.value)
+        }
       />
       <Spacer y={1} />
       <Input
@@ -116,7 +120,9 @@ const SignUp = () => {
             )}
           </button>
         }
-        onChange={(e) => setPassword(e.target.value)}
+        onChange={(e: { target: { value: React.SetStateAction<string> } }) =>
+          setPassword(e.target.value)
+        }
         type={isVisible ? "text" : "password"}
       />
       <Spacer y={3} />
@@ -133,9 +139,17 @@ const SignUp = () => {
         atau lanjutkan dengan
       </div>
       <Spacer y={4} />
-      <Button size="lg" isIconOnly onClick={handleSignUpWithGoogle}>
-        <FcGoogle size="48" />
-      </Button>
+      <div>
+        <Button
+          className="w-full h-auto"
+          size="lg"
+          isIconOnly
+          onClick={handleSignUpWithGoogle}
+        >
+          <FcGoogle size="48" />
+        </Button>
+      </div>
+
       <Spacer y={2} />
       <div className="text-center">
         Already have an account?{" "}

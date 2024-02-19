@@ -65,7 +65,9 @@ const SignIn = () => {
         size="lg"
         placeholder="E-mail"
         value={email}
-        onChange={(e) => setEmail(e.target.value)}
+        onChange={(e: { target: { value: React.SetStateAction<string> } }) =>
+          setEmail(e.target.value)
+        }
       />
       <Spacer y={1} />
       <Input
@@ -76,7 +78,9 @@ const SignIn = () => {
         placeholder="Kata Sandi"
         value={password}
         type={isVisible ? "text" : "password"}
-        onChange={(e) => setPassword(e.target.value)}
+        onChange={(e: { target: { value: React.SetStateAction<string> } }) =>
+          setPassword(e.target.value)
+        }
         endContent={
           <button
             className="focus:outline-none"
@@ -112,9 +116,11 @@ const SignIn = () => {
         atau lanjutkan dengan
       </div>
       <Spacer y={4} />
-      <Button size="lg" isIconOnly onClick={handleSignInWithGoogle}>
-        <FcGoogle size="48" />
-      </Button>
+      <div>
+        <Button size="lg" isIconOnly onClick={handleSignInWithGoogle}>
+          <FcGoogle size="48" />
+        </Button>
+      </div>
       <Spacer y={2} />
       <div className="text-center">
         Tidak punya akun?{" "}
