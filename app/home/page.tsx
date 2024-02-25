@@ -11,6 +11,7 @@ import { signOut } from "firebase/auth";
 import { FaAngleRight } from "react-icons/fa6";
 import { Card, CardBody, User } from "@nextui-org/react";
 import GrafikJantung from "../components/GrafikJantung";
+import TinjauanHarian from "../components/TinjauanHarian";
 export default function HomePage() {
   const router = useRouter(); // Use the useRouter hook
   const [user, loading, error] = useAuthState(auth);
@@ -73,6 +74,14 @@ export default function HomePage() {
             <h3 className="text-xl">SpO2</h3>
           </div>
         </section>
+      </div>
+      <div className="p-5">
+        <h1>Tinjauan Harian</h1>
+        <TinjauanHarian />
+      </div>
+      <div className="p-6">
+        <h1>Tinjauan Harian</h1>
+        <TinjauanHarian />
       </div>
     </div>
   );
